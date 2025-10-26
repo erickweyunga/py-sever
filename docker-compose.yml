@@ -16,5 +16,5 @@ services:
       - "traefik.http.services.flask-app.loadbalancer.server.port=5000"
 
 networks:
-  app-network:
+  traefik-public:
     external: true
