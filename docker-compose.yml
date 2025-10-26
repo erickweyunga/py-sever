@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   flask-app:
-    image: ghcr.io/erickweyunga/flask-app:latest
+    image: registry.cloud.erickweyunga.me/flask-app:latest
     networks:
       - traefik-public
     environment:
