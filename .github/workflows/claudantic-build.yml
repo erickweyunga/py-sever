@@ -48,3 +48,4 @@ jobs:
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.description=Flask application image
             org.opencontainers.image.licenses=MIT
+          visibility: public
