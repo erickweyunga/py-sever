@@ -10,10 +10,10 @@ services:
     deploy:
       restart_policy:
         condition: any
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.flask-app.rule=Host(`flask-app.cloud.erickweyunga.me`)"
-      - "traefik.http.services.flask-app.loadbalancer.server.port=5000"
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.flask-app.rule=Host(`flask-app.cloud.erickweyunga.me`)"
+        - "traefik.http.services.flask-app.loadbalancer.server.port=5000"
 
 networks:
   traefik-public:
