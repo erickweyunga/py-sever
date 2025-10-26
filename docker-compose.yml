@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  flask-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: flask-app:latest
+    container_name: flask-app
+    networks:
+      - app-network
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.flask-app.rule=Host(`flask-app.example.com`)"
+      - "traefik.http.services.flask-app.loadbalancer.server.port=5000"
+
+networks:
+  app-network:
+    external: true
